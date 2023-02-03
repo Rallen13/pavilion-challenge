@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { getMemberCards } from './utils/ApiCalls';
+ 
 
 function App() {
+  console.log(getMemberCards());
+
   return (
     <div className="App">
       <header className="App-header">
