@@ -17,14 +17,14 @@ const MemberCard = ({ user }) => {
 
   return (
     <div className="member-card" data-cy="member-card" key={member.id}>
-      <a href={member.url} data-cy="member-url">
-        <h2 data-cy="member-login">{member.login}</h2>
-      </a>
       <img
         src={member.avatar_url}
         alt={member.name}
         className="member-avatar"
       ></img>
+      <a href={member.url} data-cy="member-url">
+        <h2 data-cy="member-login">{member.login}</h2>
+      </a>
       <h2 data-cy="member-name">{member.name}</h2>
       <h2 data-cy="member-location">{member.location}</h2>
       <h2 data-cy="member-email">{member.email}</h2>
