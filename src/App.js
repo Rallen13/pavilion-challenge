@@ -2,27 +2,31 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { getMembers } from './utils/ApiCalls';
 import MemberCardContainer from './components/MemberCardContainer/MemberCardContainer';
+import { parseLinkHeader } from '@web3-storage/parse-link-header';
 
 function App() {
   const [members, setMembers] = useState([]);
-  const [prevPage, setPrevPage] = useState('');
-  const [nextPage, setNextPage] = useState('');
+  const [since, setSince] = useState(0);
+  const [links, setLinks] = useState({});
 
   useEffect(() => {
     try {
-      getMembers().then((response) => {
+      getMembers(since).then((response) => {
         setMembers(response.data);
-        setPrevPage(response.url);
-        const nextLink = splitNextLink(response.headers.link);
-        setNextPage(nextLink);
+        const linkHeader = response.headers.link;
+        if (linkHeader) {
+          setLinks(parseLinkHeader(linkHeader));
+        }
       });
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [since]);
 
-  const splitNextLink = (link) => {
-    return link.split(', ')[0].split('>')[0].slice(1);
+  const nextPage = () => {
+    if (links && links.next) {
+      setSince(links.next.since);
+    }
   };
 
   return (
@@ -32,7 +36,10 @@ function App() {
         alt=""
       ></img>
       <MemberCardContainer members={members} />
-      <div>
+      <div className="button-navigation">
+        <button className="button next-button" onClick={() => nextPage()}>
+          Next
+        </button>
       </div>
     </div>
   );
