@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { getMemberCards } from './utils/ApiCalls';
+import { getMembers } from './utils/ApiCalls';
 import MemberCardContainer from './components/MemberCardContainer/MemberCardContainer';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     try {
-      getMemberCards().then((response) => {
+      getMembers().then((response) => {
         setMembers(response.data);
       })
     } catch (error) {
