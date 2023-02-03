@@ -1,27 +1,24 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { getMemberCards } from './utils/ApiCalls';
- 
+import MemberCardContainer from './components/MemberCardContainer/MemberCardContainer';
 
 function App() {
-  console.log(getMemberCards());
+  const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    try {
+      getMemberCards().then((response) => {
+        setMembers(response.data);
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MemberCardContainer members={members} />
     </div>
   );
 }
