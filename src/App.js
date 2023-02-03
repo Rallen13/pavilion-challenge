@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src="https://back.joinpavilion.com/wp-content/uploads/2022/09/pavilion-logo.svg" alt="" class="jsx-2827836672"></img>
       <MemberCardContainer members={members} />
     </div>
   );
