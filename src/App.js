@@ -20,6 +20,8 @@ function App() {
           setLinks(parseLinkHeader(linkHeader));
         }
       });
+//scrolls page to top after clicking next button
+      window.scrollTo(0, 0);
     } catch (error) {
       console.log(error);
     }
