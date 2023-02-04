@@ -3,6 +3,8 @@ import './App.css';
 import { getMembers } from './utils/ApiCalls';
 import MemberCardContainer from './components/MemberCardContainer/MemberCardContainer';
 import { parseLinkHeader } from '@web3-storage/parse-link-header';
+import Header from './components/Header/Header';
+import Button from './components/Button/Button';
 
 function App() {
   const [members, setMembers] = useState([]);
@@ -31,15 +33,10 @@ function App() {
 
   return (
     <div className="App">
-      <img
-        src="https://back.joinpavilion.com/wp-content/uploads/2022/09/pavilion-logo.svg"
-        alt=""
-      ></img>
+      <Header />
       <MemberCardContainer members={members} />
       <div className="button-navigation">
-        <button className="button next-button" onClick={() => nextPage()}>
-          Next
-        </button>
+        <Button onClick={() => nextPage()}></Button>
       </div>
     </div>
   );

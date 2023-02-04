@@ -22,13 +22,17 @@ const MemberCard = ({ user }) => {
         alt={member.name}
         className="member-avatar"
       ></img>
-      <a href={member.url} data-cy="member-url">
+      <a className="member-link" href={member.url} data-cy="member-url">
         <h2 data-cy="member-login">{member.login}</h2>
       </a>
-      <h2 data-cy="member-name">{member.name}</h2>
-      <h2 data-cy="member-location">{member.location}</h2>
-      <h2 data-cy="member-email">{member.email}</h2>
-      <h2 data-cy="member-repos">{member.public_repos}</h2>
+      <h3 className="member-name" data-cy="member-name">
+        {member.name}
+      </h3>
+      {member.location && <p data-cy="member-location">{member.location}</p>}
+      {member.email && <p data-cy="member-email">{member.email}</p>}
+      {member.public_repos && (
+        <p data-cy="member-repos">Public Repos: {member.public_repos}</p>
+      )}
     </div>
   );
 };

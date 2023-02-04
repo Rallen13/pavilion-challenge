@@ -5,11 +5,11 @@
   flex-flow: row wrap;
   overflow: auto;
   gap: 2rem;
+  margin: 2rem auto;
 }
 
 @media (min-width: 890px) {
   .member-card-container {
     max-width: 70rem;
-    margin: auto;
   }
 }
