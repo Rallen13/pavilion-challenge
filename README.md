@@ -19,19 +19,18 @@ Throughout this challenge, I took full advantage of React’s modular nature by 
 
 The front end is a single page application that fetches member data from the GitHub API and renders the following:
 
-A Member Card that shows the following about each member:
-
-- Username with a link to the profile
+* A Member Card that shows the following about each member:
+  - Username with a link to the profile
   - Avatar
   - Name
   - Location
   - Email Address
   - The number of public repositories they have
   
-- There should be 10 Member Cards per page
-- Styling with CSS and SCSS
-- The design is responsive
-- Error handling for a broken URL
+* There should be 10 Member Cards per page
+* Styling with CSS and SCSS
+* The design is responsive
+* Error handling for a broken URL
 
 
 ## Setup to Run Locally
