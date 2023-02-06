@@ -29,9 +29,9 @@ The front end is a single page application that fetches member data from the Git
   - Email Address
   - The number of public repositories they have
   
-* There should be 10 Member Cards per page
+* There are 10 Member Cards per page
 * Styling with CSS and SCSS
-* The design is responsive
+* The design is fully responsive
 * Error handling for a broken URL
 
 
