@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     getMembers(since)
       .then((response) => {
-        console.log(JSON.stringify(response));
         setMembers(response.data);
         const linkHeader = response.headers.link;
         if (linkHeader) {
@@ -36,7 +35,7 @@ function App() {
       setSince(links.next.since);
     }
   };
-
+  
   return (
     <div className="App">
       <Header />
