@@ -61,7 +61,7 @@ function App() {
     }
     /* 
     Check if links exist and also includes a "next" object. 
-    If true, then set since to the since key from the "next" object.
+    If true, then set 'since' to the since key from the "next" object.
     */
   };
 
