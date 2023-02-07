@@ -35,7 +35,7 @@ function App() {
       setSince(links.next.since);
     }
   };
-  
+
   return (
     <div className="App">
       <Header />

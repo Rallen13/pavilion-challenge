@@ -1,8 +1,8 @@
 import { Octokit } from '@octokit/core';
 
-const API_TOKEN = process.env.REACT_APP_API_TOKEN
+const API_TOKEN = process.env.REACT_APP_API_TOKEN;
 
-const octokit = new Octokit({ auth: API_TOKEN} );
+const octokit = new Octokit({ auth: API_TOKEN });
 
 export const getMembers = async (since) => {
   const response = await octokit.request('GET /users', {
