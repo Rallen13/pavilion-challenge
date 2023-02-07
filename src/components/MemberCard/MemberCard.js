@@ -20,9 +20,10 @@ const MemberCard = ({ user }) => {
       <img
         src={member.avatar_url}
         alt={member.name}
+        data-cy="member-avatar"
         className="member-avatar"
       ></img>
-      <a className="member-link" href={member.url} data-cy="member-url">
+      <a className="member-link" href={member.url} data-cy="member-link">
         <h2 data-cy="member-login">{member.login}</h2>
       </a>
       <h3 className="member-name" data-cy="member-name">

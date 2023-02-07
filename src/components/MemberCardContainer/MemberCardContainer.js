@@ -7,7 +7,11 @@ const MemberCardContainer = ({ members }) => {
     return <MemberCard key={member.id} user={member} />;
   });
 
-  return <main className="member-card-container">{renderedCards}</main>;
+  return (
+    <main data-cy="member-card-container" className="member-card-container">
+      {renderedCards}
+    </main>
+  );
 };
 
 export default MemberCardContainer;
