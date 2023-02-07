@@ -50,6 +50,10 @@ function App() {
       scrolls page to top after clicking next button
       */
   }, [since]);
+  /* 
+  useEffect runs on intial load, and then each time 'since' is updated.
+  The nextPage callback updates 'since' to rerender the data.
+  */
 
   const nextPage = () => {
     if (links && links.next) {
