@@ -73,7 +73,9 @@ The front end is a single page application that fetches member data from the Git
 ### Disclaimer: If you hit the rate limit on the API response follow the steps outlined below
 1. Create a GitHub Auth Token following these [instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)
 2. Add the generated Auth Token to a `.env` file at the root level of the project.
-```REACT_APP_API_TOKEN="secretToken"```
+``` 
+REACT_APP_API_TOKEN="secretToken"
+```
 
 
 ## Contributors
