@@ -1,6 +1,7 @@
 import { Octokit } from '@octokit/core';
 
 const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+/* must abstract the token to a variable for process.env to work */
 
 const octokit = new Octokit({ auth: API_TOKEN });
 

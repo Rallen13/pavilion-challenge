@@ -21,19 +21,44 @@ function App() {
         if (linkHeader) {
           setLinks(parseLinkHeader(linkHeader));
         }
+        /* 
+        Use the parseLinkHeader method to mutate the linkHeader variable in to an object like below:
+          
+        {
+          first: {
+            since: '', 
+            rel: 'first', 
+            url: 'https://api.github.com/users{?since}'
+          },
+          next: {
+            since: '19', 
+            per_page: '10', 
+            rel: 'next', 
+            url: 'https://api.github.com/users?since=19&per_page=10'
+          }
+        }
+
+        Then we set links in state to use in conditional checks in the nextPage callback
+        */
       })
       .catch((error) => {
         setError(true);
         console.log(error);
       });
-    //scrolls page to top after clicking next button
-    window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
+      /*
+      scrolls page to top after clicking next button
+      */
   }, [since]);
 
   const nextPage = () => {
     if (links && links.next) {
       setSince(links.next.since);
     }
+    /* 
+    Check if links exist and also includes a "next" object. 
+    If true, then set since to the since key from the "next" object.
+    */
   };
 
   return (
@@ -48,6 +73,7 @@ function App() {
           </div>
         </>
       )}
+      {/* conditionally render the view based on error status */}
     </div>
   );
 }
