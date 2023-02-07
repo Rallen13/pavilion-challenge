@@ -26,7 +26,16 @@ The deliverable is the source code, using whichever libraries, packages, framewo
 
 ## Context
 
-Throughout this challenge, I took full advantage of React’s modular nature by creating dynamically rendered components used on a single view. A thoughtful architecture was implemented using a utilities and components folder. I utilized the GitHub Users REST API to get information about authenticated users. I was able to conceal an Auth Token within a process.env file. This was also my first time implementing pagination from an API call. I accomplished this by researching how to harness the power of Link Headers and utilized a third party package, "@web3-storage/parse-link-header", to parse the "next" link from the API response. I have included code comments throughout to explain my approach more in depth. Using SCSS, I reduced the amount of repeated styling and aligned my app with Github's branding. Utilizing a mobile-first approach with flexbox,  the app is fully responsive across all viewport sizes . Lastly, end-to-end testing with Cypress was applied to ensure that the application behaves as expected and that the flow of data is maintained.
+Throughout this challenge, I took full advantage of React’s modular nature by creating dynamically rendered components used on a single view. A thoughtful architecture was implemented using a utilities and components folder. Using SCSS, I reduced the amount of repeated styling and aligned my app with Github's branding. Utilizing a mobile-first approach with flexbox and media queries, the app is fully responsive across all viewport sizes.
+
+
+I utilized the [GitHub Users REST API](https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28) through [Oktokit.js](https://docs.github.com/en/rest/quickstart?apiVersion=2022-11-28). My first API call, [list users](https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#list-users), is set up to get a paginated response of 10 users. Then, I had to utilize a second end point, [get a user](https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user), to get all information about an authenticated user. I was able to conceal an Github Auth Token within a process.env file. 
+
+
+This was my first time implementing pagination from an API call and accomplished this by researching how to harness the power of Link Headers and utilized a third party package, [@web3-storage/parse-link-header](https://www.npmjs.com/package/@web3-storage/parse-link-header), to parse the `next` link from the API response. I have included code comments throughout to explain my approach more in depth.  
+
+
+Lastly, end-to-end testing with Cypress was applied to ensure that the application behaves as expected and that the flow of data is maintained.
 
 ## Functionality
 
@@ -56,10 +65,14 @@ The front end is a single page application that fetches member data from the Git
 ## Setup to Run Locally
 
 1. Fork and clone this repository
-2. Cd into the root directory and run `npm i`
-3. To run this server, run `npm start` in the terminal and React will start the development server. To stop the local server, use command `Control + C`.
+2. From the root directory and run `npm i`
+3. To run the server, run `npm start` in the terminal and React will start the development server. To stop the local server, use command `Control + C`.
 4. Open a browser window and go to http://localhost:3000 to view the website
 5. To run the testing suite, run `npm run cypress` and Cypress will open up.
+
+### Disclaimer: If you hit the rate limit on the API response follow the steps outlined below
+1. Create a GitHub Auth Token following these [instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)
+2. Add the generated Auth Token to a `.env` file at the root level of the project.
 
 
 ## Contributors
