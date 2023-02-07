@@ -1,7 +1,18 @@
+<div id="header" align="center">
+
+<img width="1427" alt="Screen Shot 2023-02-06 at 5 06 37 PM" src="https://user-images.githubusercontent.com/98505112/217115812-64b416bc-b8d1-4d7b-89a9-05d866cdbb03.png">
+</div>
+
+
+<h1 align="center"> Pavilion Challenge </h1>
+
 ## Table of Contents
 
 - [Challenge Overview](#challenge-overview)
-- [Setup](#setup)
+- [Context](#context)
+- [Functionality](#functionality)
+- [Future Features](#future-deatures)
+- [Setup](#setup-to-run-locally)
 - [Contributors](#contributors)
 
 ## Challenge Overview
@@ -13,11 +24,11 @@ Your task is to create a paginated single page application using React that list
 
 The deliverable is the source code, using whichever libraries, packages, frameworks, tools, and development methodologies you choose. The requirements intentionally leave out many details. This is an opportunity for you to make decisions about the design of the app. What you leave out is just as important as what you include!
 
-### Context
+## Context
 
 Throughout this challenge, I took full advantage of React’s modular nature by creating dynamically rendered components used on a single view. Thoughtful architecture was implemented using a utilities and components folder. I utilized the GitHub USERS REST API to get public and private information about authenticated users. This was my first time using an "auth token" with an API and I was able to conceal the token within a process.env file. This was also my first time implementing pagination within an application. I accomplished this successfully by ...... Using shared classes and nested styling in SASS, I was able to reduce the amount of repeated CSS throughout the app. A mobile-first development approach was utilized to make the design fully responsive across all viewport sizes. Lastly, end-to-end testing with Cypress was applied to ensure that the application behaves as expected and that the flow of data is maintained for various user tasks and processes.
 
-### This  application includes the following core functionality:
+## Functionality
 
 The front end is a single page application that fetches member data from the GitHub API and renders the following:
 
@@ -33,6 +44,13 @@ The front end is a single page application that fetches member data from the Git
 * Styling with CSS and SCSS
 * The design is fully responsive
 * Error handling for a broken URL
+
+## Future Features
+
+* Search 
+* Filtering
+* Back button
+* Routing pagination
 
 
 ## Setup to Run Locally
